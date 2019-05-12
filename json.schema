@@ -1,0 +1,188 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "glossary",
+    "Link"
+  ],
+  "properties": {
+    "glossary": {
+      "$id": "#/properties/glossary",
+      "type": "object",
+      "title": "The Glossary Schema",
+      "required": [
+        "title",
+        "GlossDiv"
+      ],
+      "properties": {
+        "title": {
+          "$id": "#/properties/glossary/properties/title",
+          "type": "string",
+          "title": "The Title Schema",
+          "default": "",
+          "examples": [
+            "example glossary"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "GlossDiv": {
+          "$id": "#/properties/glossary/properties/GlossDiv",
+          "type": "object",
+          "title": "The Glossdiv Schema",
+          "required": [
+            "title",
+            "GlossList"
+          ],
+          "properties": {
+            "title": {
+              "$id": "#/properties/glossary/properties/GlossDiv/properties/title",
+              "type": "string",
+              "title": "The Title Schema",
+              "default": "",
+              "examples": [
+                "S"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "GlossList": {
+              "$id": "#/properties/glossary/properties/GlossDiv/properties/GlossList",
+              "type": "object",
+              "title": "The Glosslist Schema",
+              "required": [
+                "GlossEntry"
+              ],
+              "properties": {
+                "GlossEntry": {
+                  "$id": "#/properties/glossary/properties/GlossDiv/properties/GlossList/properties/GlossEntry",
+                  "type": "object",
+                  "title": "The Glossentry Schema",
+                  "required": [
+                    "ID",
+                    "SortAs",
+                    "GlossTerm",
+                    "Acronym",
+                    "Abbrev",
+                    "GlossDef",
+                    "GlossSee"
+                  ],
+                  "properties": {
+                    "ID": {
+                      "$id": "#/properties/glossary/properties/GlossDiv/properties/GlossList/properties/GlossEntry/properties/ID",
+                      "type": "string",
+                      "title": "The Id Schema",
+                      "default": "",
+                      "examples": [
+                        "SGML"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "SortAs": {
+                      "$id": "#/properties/glossary/properties/GlossDiv/properties/GlossList/properties/GlossEntry/properties/SortAs",
+                      "type": "string",
+                      "title": "The Sortas Schema",
+                      "default": "",
+                      "examples": [
+                        "SGML"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "GlossTerm": {
+                      "$id": "#/properties/glossary/properties/GlossDiv/properties/GlossList/properties/GlossEntry/properties/GlossTerm",
+                      "type": "string",
+                      "title": "The Glossterm Schema",
+                      "default": "",
+                      "examples": [
+                        "Standard Generalized Markup Language"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "Acronym": {
+                      "$id": "#/properties/glossary/properties/GlossDiv/properties/GlossList/properties/GlossEntry/properties/Acronym",
+                      "type": "string",
+                      "title": "The Acronym Schema",
+                      "default": "",
+                      "examples": [
+                        "SGML"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "Abbrev": {
+                      "$id": "#/properties/glossary/properties/GlossDiv/properties/GlossList/properties/GlossEntry/properties/Abbrev",
+                      "type": "string",
+                      "title": "The Abbrev Schema",
+                      "default": "",
+                      "examples": [
+                        "ISO 8879:1986"
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "GlossDef": {
+                      "$id": "#/properties/glossary/properties/GlossDiv/properties/GlossList/properties/GlossEntry/properties/GlossDef",
+                      "type": "object",
+                      "title": "The Glossdef Schema",
+                      "required": [
+                        "para",
+                        "GlossSeeAlso"
+                      ],
+                      "properties": {
+                        "para": {
+                          "$id": "#/properties/glossary/properties/GlossDiv/properties/GlossList/properties/GlossEntry/properties/GlossDef/properties/para",
+                          "type": "string",
+                          "title": "The Para Schema",
+                          "default": "",
+                          "examples": [
+                            "A meta-markup language, used to create markup languages such as DocBook."
+                          ],
+                          "pattern": "^(.*)$"
+                        },
+                        "GlossSeeAlso": {
+                          "$id": "#/properties/glossary/properties/GlossDiv/properties/GlossList/properties/GlossEntry/properties/GlossDef/properties/GlossSeeAlso",
+                          "type": "array",
+                          "title": "The Glossseealso Schema",
+                          "items": {
+                            "$id": "#/properties/glossary/properties/GlossDiv/properties/GlossList/properties/GlossEntry/properties/GlossDef/properties/GlossSeeAlso/items",
+                            "type": "string",
+                            "title": "The Items Schema",
+                            "default": "",
+                            "examples": [
+                              "GML",
+                              "XML"
+                            ],
+                            "pattern": "^(.*)$"
+                          }
+                        }
+                      }
+                    },
+                    "GlossSee": {
+                      "$id": "#/properties/glossary/properties/GlossDiv/properties/GlossList/properties/GlossEntry/properties/GlossSee",
+                      "type": "string",
+                      "title": "The Glosssee Schema",
+                      "default": "",
+                      "examples": [
+                        "markup"
+                      ],
+                      "pattern": "^(.*)$"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Link": {
+      "$id": "#/properties/Link",
+      "type": "string",
+      "title": "The Link Schema",
+      "default": "",
+      "examples": [
+        "https://searchmicroservices.techtarget.com/definition/SGML-Standard-Generalized-Markup-Language"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}
